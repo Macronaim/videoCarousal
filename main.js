@@ -1,4 +1,3 @@
-
 const repeat = false;
 const noArrows = false;
 const noBullets = false;
@@ -13,7 +12,6 @@ function initBullets() {
     if (noBullets) {
         return;
     }
-    const bulletContainer = document.createElement('div');
     bulletContainer.classList.add('bullet-container')
     slide.forEach((elem, i) => {
         const bullet = document.createElement('div');
@@ -55,9 +53,8 @@ function initArrows() {
 }
 
 function slideInitial() {
-    initBullets();
     initArrows();
-    setTimeout(function () {
+    setTimeout(function() {
         slideRight();
     }, 500);
 }
@@ -83,8 +80,7 @@ function checkRepeat() {
                 document.querySelector('.slider-right').classList.add('not-visible')
                 document.querySelector('.slider-left').classList.remove('not-visible')
             }
-        }
-        else if (slideCurrent === 0) {
+        } else if (slideCurrent === 0) {
             slide[slide.length - 1].classList.add('not-visible');
             slide[0].classList.remove('not-visible');
             if (!noArrows) {
